@@ -4,7 +4,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
-import Container from "@material-ui/core/Container";
+import {Grid} from "@material-ui/core"
 import cover from "../images/food_upscaled.png";
 
 const useStyles = makeStyles((theme) => ({
@@ -55,61 +55,62 @@ const useStyles = makeStyles((theme) => ({
     color: "white"
   },
 
-  ["@media (max-width:720px)"]: {
-     flexDirection: "column",
-    coverImg: {
-      height: "200px"
-    },
+  // ["@media (max-width:720px)"]: {
+  //    flexDirection: "column",
+  //   coverImg: {
+  //     height: "200px"
+  //   },
 
-    presentation: {
-      display: "flex",
-      width: "20%",
-      margin: "auto",
-      // minHeight: "40vh",
-      alignItems: "center",
+  //   presentation: {
+  //     display: "flex",
+  //     width: "20%",
+  //     margin: "auto",
+  //     // minHeight: "40vh",
+  //     alignItems: "center",
     
-    },
+  //   },
 
-    introduction: {
-      flex: 1,
-      paddingLeft: 20,
-      height: "140px",
-    },
+  //   introduction: {
+  //     flex: 1,
+  //     paddingLeft: 20,
+  //     height: "140px",
+  //   },
 
-    safeFood: {
-      fontSize: 22,
-      fontWeight: 200,
-    },
-    delivery: {
-      color: "#12278c",
-      fontSize: 22,
-      fontWeight: "bold",
-      marginTop: -10,
-      marginBottom: 20,
-    },
-    paragraph: {
-      width: 300,
-      fontSize: 14.5,
-    },
-    // cover: {
-    //   flex: 1,
-    //   display: "flex",
-    //   justifyContent: "center",
-    //   height: "52vh",
-    // },
-    cover: {
-      display: "column",
-      justifyContent: "center",
-      height: "22vh",
-    }
-  },
+  //   safeFood: {
+  //     fontSize: 22,
+  //     fontWeight: 200,
+  //   },
+  //   delivery: {
+  //     color: "#12278c",
+  //     fontSize: 22,
+  //     fontWeight: "bold",
+  //     marginTop: -10,
+  //     marginBottom: 20,
+  //   },
+  //   paragraph: {
+  //     width: 300,
+  //     fontSize: 14.5,
+  //   },
+  //   // cover: {
+  //   //   flex: 1,
+  //   //   display: "flex",
+  //   //   justifyContent: "center",
+  //   //   height: "52vh",
+  //   // },
+  //   cover: {
+  //     display: "column",
+  //     justifyContent: "center",
+  //     height: "22vh",
+  //   }
+  // },
   
 }));
 
 const HomeStart = () => {
   const classes = useStyles();
   return (
-    <section className={classes.presentation}>
+    <Grid item lg={12} xs={12}>
+      <section className={classes.presentation}>
       
       <div className={classes.introduction}>
         <Typography className={classes.safeFood} noWrap>
@@ -132,6 +133,8 @@ const HomeStart = () => {
       </div>
       
     </section>
+    </Grid>
+    
   );
 };
 

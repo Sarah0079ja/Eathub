@@ -23,14 +23,7 @@ const useStyles = makeStyles(() => ({
   SearchBar: {
     margin: "24px 0 28px 360px",
   },
-  ["@media (max-width:720px)"]: {
-    
-   center: {
-     textAlign: "center",
-     fontSize: 20,
-     width: 100
-   },
-  }
+
 }));
 
 const Home = () => {
@@ -53,41 +46,47 @@ const Home = () => {
 
   let restaurantMarkup = loading ? <Spinner /> : <RestaurantContent />;
   return (
-    <>
-      {authenticated && role === "ROLE_SELLER" ? (
-        <Redirect to="/seller/dashboard" />
-      ) : (
-        <>
-          <HomeStart />
-          <Container>
-          <Grid container direction="column">
-            <Grid item>
-              <Typography variant="h5" className={classes.center} noWrap>
-                Your favourite food, delivered with FoodHub&nbsp;&nbsp;
-                <span style={{ fontSize: 40 }}>🍽</span>
-              </Typography>
-            </Grid>
-            <Grid item className={classes.SearchBar}>
-              <SearchBar page="home" action={setLocationStatus} />
-            </Grid>
-            <Grid item container>
-              <Grid item xs={false} sm={1} />
-              <Grid item xs={12} sm={10}>
-                {locationStatus ? (
-                  restaurantMarkup
-                ) : (
-                  <Typography variant="body1" className={classes.center} noWrap>
-                    Enter your location to view nearby restaurants
-                  </Typography>
-                )}
-              </Grid>
-              <Grid item xs={false} sm={1} />
-            </Grid>
+   <Grid item lg={12} xs={12}>
+      <>
+    
+    {authenticated && role === "ROLE_SELLER" ? (
+      <Redirect to="/seller/dashboard" />
+    ) : (
+      <>
+        <HomeStart />
+        <Container>
+        <Grid container direction="column">
+          <Grid item  xs={12} xs={10}>
+            <Typography variant="h7" className={classes.center} noWrap>
+              Your favourite food, delivered with FoodHub&nbsp;&nbsp;
+              <span style={{ fontSize: 40 }}>🍽</span>
+            </Typography>
           </Grid>
-          </Container>
-        </>
-      )}
-    </>
+          <Grid item xs={12} className={classes.SearchBar}>
+            <SearchBar page="home" action={setLocationStatus} />
+          </Grid>
+          <Grid item container>
+            <Grid item xs={false} sm={1} />
+            <Grid item xs={12} sm={10}>
+              {locationStatus ? (
+                restaurantMarkup
+              ) : (
+                <Typography variant="body1" className={classes.center} noWrap>
+                  Enter your location to view nearby restaurants
+                </Typography>
+              )}
+            </Grid>
+            <Grid item xs={false} sm={1} />
+          </Grid>
+        </Grid>
+        </Container>
+      
+      </>
+    
+    )}
+  </>
+   </Grid>
+   
   );
 };
 

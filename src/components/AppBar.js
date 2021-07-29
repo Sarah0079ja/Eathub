@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 //material-ui
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
-
+import Grid from "@material-ui/core/Grid";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
@@ -54,6 +54,9 @@ export default function AppBarPrimary() {
 
   return (
     <AppBar position="static" className={classes.appBar}>
+      <Grid>
+
+     
       <Toolbar>
       <Link to="/" className={classes.title}>
           <Typography variant="h3" noWrap>
@@ -110,6 +113,7 @@ export default function AppBarPrimary() {
           </div>
         )}
       </Toolbar>
+      </Grid>
     </AppBar>
   );
 }
