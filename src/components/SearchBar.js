@@ -14,7 +14,7 @@ import IconButton from "@material-ui/core/IconButton";
 import MyLocation from "@material-ui/icons/MyLocation";
 import LocationOn from "@material-ui/icons/LocationOn";
 import SearchIcon from "@material-ui/icons/Search";
-import {Grid} from '@material-ui/core'
+
 import axios from "axios";
 
 import { fetchRestaurantsByAddress } from "../redux/actions/dataActions";
@@ -53,7 +53,6 @@ const useStyles = makeStyles((theme) => ({
     height: 28,
     margin: 4,
   },
-
 }));
 
 export default function CustomizedInputBase(props) {
@@ -123,14 +122,10 @@ export default function CustomizedInputBase(props) {
   };
 
   return (
-  
-
-    
     <Paper
       component="form"
       className={page !== "items" ? classes.rootHome : classes.rootItems}
     >
-        <Grid>
       {page === "home" && <LocationOn className={classes.iconButton} />}
 
       {page === "items" && (
@@ -198,8 +193,6 @@ export default function CustomizedInputBase(props) {
           </IconButton>
         </>
       )}
-       </Grid>
     </Paper>
-   
   );
 }
