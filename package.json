@@ -2,8 +2,7 @@
   "name": "restaurant1",
   "version": "0.1.0",
   "private": true,
-  
-"homepage": "http://Sarah0079ja.github.io/Eathub",
+  "homepage": "https://Sarah0079ja.github.io/Eathub",
 
   "dependencies": {
     "@material-ui/core": "^4.12.2",
