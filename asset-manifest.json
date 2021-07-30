@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/Eathub/static/css/main.c5e30a3e.chunk.css",
+    "main.js": "/Eathub/static/js/main.46ac6642.chunk.js",
+    "main.js.map": "/Eathub/static/js/main.46ac6642.chunk.js.map",
+    "runtime-main.js": "/Eathub/static/js/runtime-main.736cc58c.js",
+    "runtime-main.js.map": "/Eathub/static/js/runtime-main.736cc58c.js.map",
+    "static/js/2.6bd2c3cc.chunk.js": "/Eathub/static/js/2.6bd2c3cc.chunk.js",
+    "static/js/2.6bd2c3cc.chunk.js.map": "/Eathub/static/js/2.6bd2c3cc.chunk.js.map",
+    "static/js/3.0754c6a5.chunk.js": "/Eathub/static/js/3.0754c6a5.chunk.js",
+    "static/js/3.0754c6a5.chunk.js.map": "/Eathub/static/js/3.0754c6a5.chunk.js.map",
+    "index.html": "/Eathub/index.html",
+    "static/css/main.c5e30a3e.chunk.css.map": "/Eathub/static/css/main.c5e30a3e.chunk.css.map",
+    "static/js/2.6bd2c3cc.chunk.js.LICENSE.txt": "/Eathub/static/js/2.6bd2c3cc.chunk.js.LICENSE.txt",
+    "static/media/food_upscaled.f3f72a4c.png": "/Eathub/static/media/food_upscaled.f3f72a4c.png",
+    "static/media/hamburger.23552089.jpg": "/Eathub/static/media/hamburger.23552089.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.736cc58c.js",
+    "static/js/2.6bd2c3cc.chunk.js",
+    "static/css/main.c5e30a3e.chunk.css",
+    "static/js/main.46ac6642.chunk.js"
+  ]
+}
