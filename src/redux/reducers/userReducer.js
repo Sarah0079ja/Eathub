@@ -26,7 +26,7 @@ const initialState = {
   lastName: "",
 };
 
-export default function (state = initialState, action) {
+const userReducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_USER:
       return {
@@ -70,3 +70,4 @@ export default function (state = initialState, action) {
       return state;
   }
 }
+export default userReducer

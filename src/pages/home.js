@@ -4,24 +4,22 @@ import { Redirect } from "react-router-dom";
 
 //material-ui
 import { makeStyles } from "@material-ui/core/styles";
-import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
-import Container from "@material-ui/core/Container";
+import {Container, Typography} from "@material-ui/core";
 
 import HomeStart from "../components/HomeStart";
 import SearchBar from "../components/SearchBar";
 import Spinner from "../util/spinner/spinner";
 import RestaurantContent from "../components/RestaurantContent";
 
-// import store from "../redux/store";
-// import { fetchRestaurantsByAddress } from "../redux/actions/dataActions";
-
 const useStyles = makeStyles(() => ({
   center: {
     textAlign: "center",
   },
   SearchBar: {
-    margin: "24px 0 28px 360px",
+    justifyContent: "center",
+    alignContent: "center",
+    margin: "30px 0px 20px 80px",
   },
 
 }));
@@ -37,56 +35,55 @@ const Home = () => {
     localStorage.getItem("location") ? true : false
   );
 
-  // let latlng = localStorage.getItem("latlng");
-
-  // if (latlng) {
-  //   const latlngArray = latlng.split(", ");
-  //   dispatch(fetchRestaurantsByAddress(latlngArray[0], latlngArray[1]));
-  // }
-
   let restaurantMarkup = loading ? <Spinner /> : <RestaurantContent />;
   return (
-   <Grid item lg={12} xs={12}>
+    <Grid item lg={12} xs={12}>
       <>
-    
-    {authenticated && role === "ROLE_SELLER" ? (
-      <Redirect to="/seller/dashboard" />
-    ) : (
-      <>
-        <HomeStart />
-        <Container>
-        <Grid container direction="column">
-          <Grid item  xs={12} xs={10}>
-            <Typography variant="h7" className={classes.center} noWrap>
-              Your favourite food, delivered with FoodHub&nbsp;&nbsp;
-              <span style={{ fontSize: 40 }}>🍽</span>
-            </Typography>
-          </Grid>
-          <Grid item xs={12} className={classes.SearchBar}>
-            <SearchBar page="home" action={setLocationStatus} />
-          </Grid>
-          <Grid item container>
-            <Grid item xs={false} sm={1} />
-            <Grid item xs={12} sm={10}>
-              {locationStatus ? (
-                restaurantMarkup
-              ) : (
-                <Typography variant="body1" className={classes.center} noWrap>
-                  Enter your location to view nearby restaurants
-                </Typography>
-              )}
-            </Grid>
-            <Grid item xs={false} sm={1} />
-          </Grid>
-        </Grid>
-        </Container>
-      
+        {authenticated && role === "ROLE_SELLER" ? (
+          <Redirect to="/seller/dashboard" />
+        ) : (
+          <>
+            <HomeStart />
+            <Container>
+              <Grid container direction="column">
+                <Grid item xs={12} sm={6} className={classes.center}>
+                  <Typography variant="h7" className={classes.center} noWrap>
+                    Your favourite food, delivered with EatHub&nbsp;&nbsp;
+                    <span style={{ fontSize: 40 }}>🍽</span>
+                  </Typography>
+                </Grid>
+                <Grid
+                  item
+                  xs={12}
+                  sm={6}
+                  className={classes.SearchBar}
+                  style={{ justifyContent: "center", alignItems: "center" }}
+                >
+                  <SearchBar page="home" action={setLocationStatus} />
+                </Grid>
+                <Grid item container>
+                  <Grid item xs={false} sm={1} />
+                  <Grid item xs={12} sm={10}>
+                    {locationStatus ? (
+                      restaurantMarkup
+                    ) : (
+                      <Typography
+                        variant="body1"
+                        className={classes.center}
+                        noWrap
+                      >
+                        Enter your location to view nearby restaurants
+                      </Typography>
+                    )}
+                  </Grid>
+                  <Grid item xs={false} sm={1} />
+                </Grid>
+              </Grid>
+            </Container>
+          </>
+        )}
       </>
-    
-    )}
-  </>
-   </Grid>
-   
+    </Grid>
   );
 };
 
